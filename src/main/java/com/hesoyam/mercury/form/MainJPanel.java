@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static com.hesoyam.mercury.reader.AvailableProductsReader.getAvailableProducts;
@@ -283,6 +284,21 @@ public class MainJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createFileButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        Date currentExpiryDate = expiryDate.getDate();
+        Date currentManufactureDate = manufactureDate.getDate();
+
+        if (currentManufactureDate == null) {
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Моля попълнете дата на производство и опитайте отново.");
+            return;
+        }
+
+        if (currentExpiryDate == null) {
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Моля попълнете срок на годност и опитайте отново.");
+            return;
+        }
+
         createDailyTrade(recipient, productName, productQuantity, manufactureDate, manufactureTime, deliveryTime, expiryDate);
     }
 
