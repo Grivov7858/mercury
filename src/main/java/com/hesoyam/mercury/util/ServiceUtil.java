@@ -4,7 +4,6 @@ import com.hesoyam.mercury.model.CounterPartyInfo;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.AreaAveragingScaleFilter;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +15,8 @@ public class ServiceUtil {
     public static final String PRODUCTS_PRICE_FILE_PATH = "src/db/productsPrice.txt";
     public static final String DAILY_TRADES_FILE_PATH = "src/db/dailyTrades.txt";
     public static final String ALL_TRADE_FILES_FILE_PATH = "src/db/allTradeFiles.docx";
+    public static final String TRADED_PRODUCTS_FILE_PATH = "src/db/tradedProducts.txt";
+    public static final String MONTHLY_INVOICES_FILE_PATH = "src/db/monthlyInvoices.docx";
     public static final Integer NUM_OF_CELLS_FIRM_INFO = 8;
     public static final Integer NUM_OF_CELLS_COUNTERPARTY_INFO = 6;
     public static final Integer UPPER_BOUND = 17;

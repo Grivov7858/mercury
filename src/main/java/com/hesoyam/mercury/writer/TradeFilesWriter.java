@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.prefs.Preferences;
 
 import static com.hesoyam.mercury.util.ServiceUtil.*;
+import static com.hesoyam.mercury.writer.MonthlyInvoiceWriter.updateInvoice;
 
 public class TradeFilesWriter {
 
@@ -25,6 +26,7 @@ public class TradeFilesWriter {
                                         JTextField deliveryTime,
                                         JXDatePicker expiryDate) {
         String carNumber = "";
+        String schoolNumber = "";
 
         //Read Object from file
         try {
@@ -36,6 +38,7 @@ public class TradeFilesWriter {
             for (CounterPartyInfo counterPartyInfo : counterPartiesInfo) {
                 if (counterPartyInfo.getSchoolName().equals(recipient.getSelectedItem().toString())) {
                     carNumber = counterPartyInfo.getCarNumber();
+                    schoolNumber = counterPartyInfo.getSchoolNum();
                 }
 
             }
@@ -84,26 +87,13 @@ public class TradeFilesWriter {
             e.printStackTrace();
         }
 
+        updateInvoice(schoolNumber, Integer.parseInt(productQuantity.getText().trim()), productName.getSelectedItem().toString());
+
         productQuantity.setText("1");
         manufactureDate.setDate(null);
         expiryDate.setDate(null);
         manufactureTime.setText("06:00");
         deliveryTime.setText("06:00");
-    }
-
-    private static Integer getFileNumberFromPreference() {
-        Preferences prefs = Preferences.userNodeForPackage(TradeFilesWriter.class);
-
-        final String PREF_NAME = "file_number";
-
-        String defaultValue = "1";
-        String propertyValue = prefs.get(PREF_NAME, defaultValue);
-        int fileNumber = Integer.parseInt(propertyValue);
-        int increasedFileNumber = fileNumber + 1;
-
-        prefs.put(PREF_NAME, Integer.toString(increasedFileNumber));
-
-        return fileNumber;
     }
 
     public static void createAllTradesFiles() {
@@ -241,7 +231,33 @@ public class TradeFilesWriter {
             out.close();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-
         }
+
+        List<TradeFileInfo> emptyDailyTradeFile = new ArrayList<>();
+        try {
+            FileOutputStream fileOut = new FileOutputStream(DAILY_TRADES_FILE_PATH);
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+
+            objectOut.writeObject(emptyDailyTradeFile);
+
+            objectOut.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static Integer getFileNumberFromPreference() {
+        Preferences prefs = Preferences.userNodeForPackage(TradeFilesWriter.class);
+
+        final String PREF_NAME = "file_number";
+
+        String defaultValue = "1";
+        String propertyValue = prefs.get(PREF_NAME, defaultValue);
+        int fileNumber = Integer.parseInt(propertyValue);
+        int increasedFileNumber = fileNumber + 1;
+
+        prefs.put(PREF_NAME, Integer.toString(increasedFileNumber));
+
+        return fileNumber;
     }
 }

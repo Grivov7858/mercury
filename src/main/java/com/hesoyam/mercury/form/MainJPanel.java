@@ -1,10 +1,13 @@
 package com.hesoyam.mercury.form;
 
 import com.hesoyam.mercury.model.ProductPrice;
+import com.hesoyam.mercury.model.invoice.BuyerInfo;
+import com.hesoyam.mercury.model.invoice.InvoiceInfo;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +17,7 @@ import static com.hesoyam.mercury.reader.CounterpartyInfoReader.getCounterpartyI
 import static com.hesoyam.mercury.reader.FirmInfoReader.getFirmInfo;
 import static com.hesoyam.mercury.reader.ProductsPriceInfoReader.getProductsPriceInfo;
 import static com.hesoyam.mercury.util.ServiceUtil.*;
+import static com.hesoyam.mercury.writer.MonthlyInvoiceWriter.extractInvoicesDoc;
 import static com.hesoyam.mercury.writer.TradeFilesWriter.createAllTradesFiles;
 import static com.hesoyam.mercury.writer.TradeFilesWriter.createDailyTrade;
 
@@ -286,8 +290,8 @@ public class MainJPanel extends javax.swing.JPanel {
         createAllTradesFiles();
     }
 
-    private void getMonthlyInvoiceButtonActionPerformed(java.awt.event.ActionEvent evt) {
-
+    private void getMonthlyInvoiceButtonActionPerformed(ActionEvent evt) {
+        extractInvoicesDoc();
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {

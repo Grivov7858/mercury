@@ -3,7 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/db/firmInfo.txt" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/hesoyam/mercury/form/MainJPanel.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/hesoyam/mercury/util/NumToWordsConverter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/hesoyam/mercury/util/ServiceUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/hesoyam/mercury/writer/MonthlyInvoiceWriter.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/com/hesoyam/mercury/writer/TradeFilesWriter.java" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1252" />
   </component>
