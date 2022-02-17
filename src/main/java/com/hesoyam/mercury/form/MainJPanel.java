@@ -73,6 +73,8 @@ public class MainJPanel extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
+        jXDatePicker1 = new org.jdesktop.swingx.JXDatePicker();
+        jLabel13 = new javax.swing.JLabel();
 
         java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("com/hesoyam/mercury/form/Bundle"); // NOI18N
         jLabel5.setText(bundle.getString("MainJPanel.jLabel5.text")); // NOI18N
@@ -169,6 +171,8 @@ public class MainJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel13.setText(bundle.getString("MainJPanel.jLabel13.text")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -185,7 +189,6 @@ public class MainJPanel extends javax.swing.JPanel {
                                                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addComponent(expiryDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(jLabel8)
                                                                         .addComponent(jLabel7)
                                                                         .addComponent(jLabel6)
                                                                         .addGroup(layout.createSequentialGroup()
@@ -197,25 +200,27 @@ public class MainJPanel extends javax.swing.JPanel {
                                                                                                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                                                                                                                 .addComponent(productName, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                                                                         .addComponent(jLabel3)))
-                                                                                        .addComponent(manufactureDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                        .addComponent(manufactureDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabel13))
                                                                                 .addGap(22, 22, 22)
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                         .addComponent(manufactureTime, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                                                                .addComponent(jLabel2)
-                                                                                                .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                                        .addComponent(jLabel4)))
-                                                                        .addComponent(deliveryTime, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabel2)
+                                                                                        .addComponent(jLabel4)
+                                                                                        .addComponent(productQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(jLabel8)
+                                                                                        .addComponent(deliveryTime, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                                         .addComponent(createFileButton)
                                                                         .addComponent(getAllFilesForTodayButton))
                                                                 .addComponent(jLabel9)
-                                                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, Short.MAX_VALUE)
                                                                 .addComponent(jLabel11)
                                                                 .addComponent(jLabel12)
                                                                 .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                         .addComponent(getMonthlyInvoiceButton))
-                                                .addContainerGap(48, Short.MAX_VALUE))))
+                                                .addContainerGap(122, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,11 +249,15 @@ public class MainJPanel extends javax.swing.JPanel {
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(recipient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel8)
+                                .addGap(15, 15, 15)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel13))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(deliveryTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(deliveryTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jXDatePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(33, 33, 33)
                                 .addComponent(createFileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(getAllFilesForTodayButton, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -277,20 +286,28 @@ public class MainJPanel extends javax.swing.JPanel {
     private void createFileButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Date currentExpiryDate = expiryDate.getDate();
         Date currentManufactureDate = manufactureDate.getDate();
+        Date currentDeliveryDate = jXDatePicker1.getDate();
 
         if (currentManufactureDate == null) {
             JFrame jFrame = new JFrame();
-            JOptionPane.showMessageDialog(jFrame, "Моля попълнете дата на производство и опитайте отново.");
+            JOptionPane.showMessageDialog(jFrame, "Моля попълнете \"Дата на производство\" и опитайте отново.");
             return;
         }
 
         if (currentExpiryDate == null) {
             JFrame jFrame = new JFrame();
-            JOptionPane.showMessageDialog(jFrame, "Моля попълнете срок на годност и опитайте отново.");
+            JOptionPane.showMessageDialog(jFrame, "Моля попълнете \"Срок на годност\" и опитайте отново.");
             return;
         }
 
-        createDailyTrade(recipient, productName, productQuantity, manufactureDate, manufactureTime, deliveryTime, expiryDate);
+        if (currentDeliveryDate == null) {
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Моля попълнете \"Дата на доставка\" и опитайте отново.");
+            return;
+        }
+
+        //jXDatePicker1 = deliveryDate
+        createDailyTrade(recipient, productName, productQuantity, manufactureDate, manufactureTime, deliveryTime, expiryDate, jXDatePicker1);
     }
 
     private void getAllFilesForTodayButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -332,6 +349,7 @@ public class MainJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -340,6 +358,7 @@ public class MainJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private org.jdesktop.swingx.JXDatePicker jXDatePicker1;
     private org.jdesktop.swingx.JXDatePicker manufactureDate;
     private javax.swing.JTextField manufactureTime;
     private javax.swing.JComboBox<String> productName;

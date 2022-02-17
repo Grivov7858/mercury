@@ -24,7 +24,8 @@ public class TradeFilesWriter {
                                         JXDatePicker manufactureDate,
                                         JTextField manufactureTime,
                                         JTextField deliveryTime,
-                                        JXDatePicker expiryDate) {
+                                        JXDatePicker expiryDate,
+                                        JXDatePicker deliveryDate) {
         String carNumber = "";
         String schoolNumber = "";
 
@@ -52,7 +53,7 @@ public class TradeFilesWriter {
 
         TradeFileInfo fileInfo = TradeFileInfo.builder()
                 .fileNumber(fileNumber)
-                .fileDate(new Date())
+                .fileDate(deliveryDate.getDate())
                 .productName(productName.getSelectedItem().toString())
                 .productQuantity(Integer.valueOf(productQuantity.getText()))
                 .manufactureDate(manufactureDate.getDate())
@@ -92,6 +93,7 @@ public class TradeFilesWriter {
         productQuantity.setText("1");
         manufactureDate.setDate(null);
         expiryDate.setDate(null);
+        deliveryDate.setDate(null);
         manufactureTime.setText("06:00");
         deliveryTime.setText("06:00");
     }
